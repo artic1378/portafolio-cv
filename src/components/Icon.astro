@@ -1,0 +1,9 @@
+---
+import { Search } from '@lucide/astro';
+import { siOpenjdk, siPhp, siJavascript, siHtml5, siSpringboot, siPostgresql, siMysql, siMongodb, siDocker, siGit, siGithub, siDbeaver, siCloudflare, siGooglegemini, siAnthropic } from 'simple-icons';
+
+const { name, label } = Astro.props as { name: string; label: string };
+const icons: Record<string, { path: string; hex: string }> = { java: siOpenjdk, php: siPhp, javascript: siJavascript, html5: siHtml5, springboot: siSpringboot, postgresql: siPostgresql, mysql: siMysql, mongodb: siMongodb, docker: siDocker, git: siGit, github: siGithub, dbeaver: siDbeaver, cloudflare: siCloudflare, google: siGooglegemini, anthropic: siAnthropic };
+const icon = icons[name];
+---
+{icon ? <svg class="tech-icon" role="img" aria-label={label} viewBox="0 0 24 24" fill={`#${icon.hex}`}><path d={icon.path}></path></svg> : <Search class="tech-icon" aria-label={label} />}

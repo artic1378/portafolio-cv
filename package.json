@@ -1,0 +1,25 @@
+{
+  "name": "portafolio-cv",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run generate:cv && astro check && astro build",
+    "generate:cv": "node scripts/generate-cv.mjs",
+    "preview": "astro preview",
+    "test": "npm run build && node scripts/verify-dist.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/check": "^0.9.4",
+    "@lucide/astro": "^1.70.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.7",
+    "pdfkit": "^0.17.2",
+    "simple-icons": "^16.37.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {}
+}

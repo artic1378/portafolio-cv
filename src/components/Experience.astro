@@ -1,0 +1,4 @@
+---
+import SectionTitle from './SectionTitle.astro'; import { experiences } from '../data/experience';
+---
+<section id="experiencia" class="section" aria-labelledby="experience-title"><div class="container"><SectionTitle eyebrow="03 — Experiencia" title="Trayectoria profesional." description="Las fechas se mantienen sin inferencias cuando el CV no las especifica." /><div class="timeline" id="experience-title">{experiences.map((item) => <article class="timeline-item reveal"><div class="timeline-meta"><p>{item.period}</p>{item.current && <span>Actual</span>}</div><div class="timeline-content"><p class="company">{item.company}</p><h3>{item.role}</h3><p class="muted">{item.location}</p><p>{item.description}</p><ul>{item.highlights.map((highlight) => <li>{highlight}</li>)}</ul>{item.technologies.length > 0 && <p class="tags">{item.technologies.map((tech) => <span>{tech}</span>)}</p>}</div></article>)}</div></div></section>

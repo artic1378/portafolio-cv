@@ -1,0 +1,4 @@
+---
+import SectionTitle from './SectionTitle.astro'; import Icon from './Icon.astro'; import { technologyGroups } from '../data/technologies';
+---
+<section id="tecnologias" class="section section-muted" aria-labelledby="tech-title"><div class="container"><SectionTitle eyebrow="02 — Tecnologías" title="Herramientas que utilizo y continúo aprendiendo." description="Los niveles se indican cuando fueron declarados como básicos o en aprendizaje." /><div class="tech-groups reveal" id="tech-title">{technologyGroups.map((group) => <section class="tech-group"><h3>{group.category}</h3><ul>{group.items.map((tech) => <li><Icon name={tech.icon} label={tech.name} /><span>{tech.name}</span>{tech.level && <small>{tech.level}</small>}</li>)}</ul></section>)}</div></div></section>

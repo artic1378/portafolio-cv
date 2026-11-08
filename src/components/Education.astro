@@ -1,0 +1,4 @@
+---
+import SectionTitle from './SectionTitle.astro'; import { education } from '../data/education';
+---
+<section id="educacion" class="section" aria-labelledby="education-title"><div class="container"><SectionTitle eyebrow="05 — Educación" title="Formación académica." /><div class="education-list" id="education-title">{education.map((item) => <article class="education-item reveal"><div><p class="eyebrow">{item.period}</p><p class="status">{item.status}</p></div><div><h3>{item.program}</h3><p class="company">{item.institution}</p>{item.description && <p class="muted">{item.description}</p>}</div></article>)}</div></div></section>

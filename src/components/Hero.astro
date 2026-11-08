@@ -1,0 +1,27 @@
+---
+import { ArrowDown, MapPin, Download } from '@lucide/astro';
+import Icon from './Icon.astro';
+import { personal } from '../data/personal';
+---
+<section id="inicio" class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-content reveal">
+      <p class="availability"><span></span>{personal.availability}</p>
+      <h1 id="hero-title">{personal.name}</h1>
+      <p class="hero-role">{personal.role}</p>
+      <p class="hero-statement">{personal.headline}</p>
+      <p class="location"><MapPin size={17} aria-hidden="true" /> {personal.location}</p>
+      <div class="hero-actions">
+        <a href="#proyectos" class="button button-primary">Ver proyectos <ArrowDown size={17} /></a>
+        {personal.cvUrl ? <a href={personal.cvUrl} download class="button button-secondary"><Download size={17} /> Descargar CV</a> : <span class="button button-secondary button-disabled" title="Se habilitará al agregar el PDF"><Download size={17} /> CV pendiente</span>}
+      </div>
+      <div class="social-links" aria-label="Perfiles profesionales">
+        <a href={personal.github} target="_blank" rel="noreferrer" aria-label="Perfil de GitHub de Arturo Villasboa"><Icon name="github" label="GitHub" /></a>
+      </div>
+    </div>
+    <aside class="hero-note reveal" aria-label="Perfil profesional">
+      <p class="eyebrow">Perfil</p><p>{personal.summary}</p>
+      <div class="note-rule"></div><p class="note-label">Actualmente</p><strong>Formación en sistemas + experiencia operativa</strong>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,4 @@
+---
+import SectionTitle from './SectionTitle.astro'; import { personal } from '../data/personal';
+---
+<section id="sobre-mi" class="section" aria-labelledby="about-title"><div class="container"><SectionTitle eyebrow="01 — Sobre mí" title="Una base técnica en crecimiento, con enfoque práctico." description="Información basada en el currículum y conocimientos confirmados." /><div class="about-grid reveal"><p class="lead" id="about-title">{personal.summary}</p><div class="detail-list"><div><h3>Especialización</h3><p>Desarrollo web, fundamentos de backend y bases de datos.</p></div><div><h3>Intereses</h3><p>Aprender frameworks, construir software útil y profundizar en tecnologías de desarrollo.</p></div><div><h3>Objetivo</h3><p>Incorporarme a un entorno de TI para aportar, aprender y desarrollarme profesionalmente.</p></div></div></div></div></section>

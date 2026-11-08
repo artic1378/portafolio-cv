@@ -1,0 +1,8 @@
+---
+import { Check, Copy, Terminal, Mail, MapPin } from '@lucide/astro'; import SectionTitle from './SectionTitle.astro'; import { personal } from '../data/personal';
+---
+<section id="contacto" class="section section-contact" aria-labelledby="contact-title"><div class="container"><SectionTitle eyebrow="06 — Contacto" title="Hablemos." description="Estoy interesado en oportunidades para iniciar y crecer profesionalmente en el área de TI." /><div class="contact-grid reveal" id="contact-title"><a class="email-link" href={`mailto:${personal.email}`}><Mail size={21} aria-hidden="true" /><span><small>Correo electrónico</small>{personal.email}</span><span aria-hidden="true">↗</span></a><div class="contact-details"><p><MapPin size={18} aria-hidden="true" />{personal.location}</p><p><Terminal size={18} aria-hidden="true" /><a href={personal.github} target="_blank" rel="noreferrer">github.com/artic1378</a></p><button class="copy-email" type="button" data-email={personal.email}><Copy size={17} /><span>Copiar correo</span><Check class="copy-check" size={17} /></button></div></div></div></section>
+<script is:inline>
+  const copyButton = document.querySelector('.copy-email');
+  copyButton?.addEventListener('click', async () => { try { await navigator.clipboard.writeText(copyButton.dataset.email || ''); copyButton.classList.add('copied'); copyButton.querySelector('span').textContent = 'Correo copiado'; setTimeout(() => { copyButton.classList.remove('copied'); copyButton.querySelector('span').textContent = 'Copiar correo'; }, 1800); } catch { window.location.href = `mailto:${copyButton.dataset.email}`; } });
+</script>

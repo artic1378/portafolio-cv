@@ -1,0 +1,13 @@
+---
+import { Moon, Sun } from '@lucide/astro';
+---
+<button class="icon-button theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">
+  <Sun class="theme-sun" size={18} aria-hidden="true" />
+  <Moon class="theme-moon" size={18} aria-hidden="true" />
+</button>
+<script is:inline>
+  const toggle = document.querySelector('.theme-toggle');
+  const root = document.documentElement;
+  const setTheme = (theme) => { root.dataset.theme = theme; localStorage.setItem('theme', theme); };
+  toggle?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+</script>

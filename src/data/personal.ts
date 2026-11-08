@@ -1,0 +1,15 @@
+export const personal = {
+  name: 'Arturo Daniel Villasboa Vera',
+  shortName: 'Arturo Villasboa',
+  role: 'Estudiante de Análisis de Sistemas Informáticos',
+  location: 'Itauguá, Paraguay',
+  email: 'arturodanielvillasboa06@gmail.com',
+  github: 'https://github.com/artic1378',
+  linkedin: undefined as string | undefined,
+  cvUrl: '/cv/arturo-villasboa-cv.pdf' as string | undefined,
+  seoTitle: 'Arturo Villasboa | Estudiante de Análisis de Sistemas',
+  description: 'Portafolio profesional de Arturo Daniel Villasboa Vera, estudiante de Análisis de Sistemas Informáticos en Paraguay.',
+  summary: 'Estudiante de tercer año de Análisis de Sistemas Informáticos en UTIC, con formación técnica en informática y experiencia en entornos comerciales. Me interesa desarrollarme profesionalmente en TI, aprender nuevas tecnologías y construir soluciones web y de bases de datos.',
+  headline: 'Construyo soluciones web y de datos claras, prácticas y orientadas a seguir aprendiendo.',
+  availability: 'Buscando una oportunidad para desarrollarme en el área de TI.',
+} as const;

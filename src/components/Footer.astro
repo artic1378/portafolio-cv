@@ -1,0 +1,5 @@
+---
+import { ArrowUp } from '@lucide/astro'; import Icon from './Icon.astro'; import { personal } from '../data/personal';
+const year = new Date().getFullYear();
+---
+<footer class="footer"><div class="container footer-inner"><p>© {year} {personal.shortName}. Todos los derechos reservados.</p><div><a href={personal.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Icon name="github" label="GitHub" /></a><a href="#inicio" class="back-top">Volver al inicio <ArrowUp size={17} /></a></div></div></footer>
